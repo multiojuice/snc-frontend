@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-	$( "#abutton" ).click(function() {
+	$( "#transform-button" ).click(function() {
 	  alert( "Handler for .click() called." );
 	});
 });
