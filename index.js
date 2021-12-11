@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$( "#transform-button" ).click(function() {
 		console.warn("upload", options);
 		$("#transform-button").prop('disabled', true);
-		fetch("http://styx.cs.rit.edu:3000/upload", options)
+		fetch("https://styx.cs.rit.edu:3000/upload", options)
 		.then((response) => {
 		return response.json();
 		})
@@ -29,7 +29,7 @@ $(document).ready(function() {
 			if(data.url) {
 				$("#loader").removeClass("hidden");
 				$("#img-init").prop("src", data.url);
-				fetch("http://styx.cs.rit.edu:3000/transform", {
+				fetch("https://styx.cs.rit.edu:3000/transform", {
 					method: 'POST',
 					body: JSON.stringify({
 						url: data.url,
