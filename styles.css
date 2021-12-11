@@ -7,6 +7,13 @@ h3 {
 	color: green;
 }
 
+a {
+    background: white;
+    padding: 10px 12px;
+    border-radius: 16px;
+    color: green;
+  }
+
 h1 {
     width: 50%;
     text-align: center;
@@ -42,12 +49,7 @@ blink marquee {
     text-align: center;
 }
 
-a {
-    background: white;
-    padding: 10px 12px;
-    border-radius: 16px;
-    color: green;
-  }
+
 
 img {
     width: 400px;
@@ -86,7 +88,7 @@ body {
     color: green;
     cursor: pointer;
   }
-  
+
   button:hover {
     box-shadow: 1px 2px 2px rgba(255,255,255,.5);
     cursor: pointer;

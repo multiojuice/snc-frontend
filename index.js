@@ -1,5 +1,6 @@
 
 let options = {}
+let panes = 5000;
 
 $(document).ready(function() {
 	$( "#uploader" ).change(function(event) {
@@ -10,6 +11,11 @@ $(document).ready(function() {
 		method: "POST",
 		body: formData,
 		};
+	  });
+
+	  $( "#panes" ).change(function(event) {
+		panes = parseInt(event.target.value)
+		console.warn("print", panes)
 	  });
 
 	$( "#transform-button" ).click(function() {
@@ -30,19 +36,20 @@ $(document).ready(function() {
 				}, 15500)
 			}
 
-			// fetch("http://127.0.0.1:3000/transform", {
-			// 	method: 'POST',
-			// 	body: JSON.stringify({
-			// 		url: data.url
-			// 	}),
-			// 	headers: {
-			// 		"Content-Type": "application/json"
-			// 	}
-			// })
-			// .then(resp => resp.json)
-			// .then((resp) => {
-			// 	console.warn(resp)
-			// }).catch(console.error)
+			fetch("http://127.0.0.1:3000/transform", {
+				method: 'POST',
+				body: JSON.stringify({
+					url: data.url,
+					panes: panes
+				}),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			})
+			.then(resp => resp.json)
+			.then((resp) => {
+				console.warn(resp)
+			}).catch(console.error)
 			
 		})
 		.catch((error) => {
