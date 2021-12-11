@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 	$( "#transform-button" ).click(function() {
 		console.warn("upload", options);
-		fetch("http://127.0.0.1:3000/upload", options)
+		fetch("http://styx.cs.rit.edu:3000/upload", options)
 		.then((response) => {
 		return response.json();
 		})

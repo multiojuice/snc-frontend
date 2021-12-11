@@ -11,38 +11,37 @@
 
  <body>
   <div class="flex-col">
-    <div class="flex-row" style="width: 100%;margin-top: 40px;">
-      <span class="subtitle">Turn your favorite photo into "Shapes and Colors"</span>
-    </div>
-    <div class="flex-row">
-      <div class="flex-col">
-        <h3>directions</h3>
-        <ol>
-          <li>
-            Upload an image to Upload! 
-            <input type="file"id="uploader" name="avatar" accept="image/png, image/jpeg">
-          </li>
-          <li>Input number of panes: <input></li>
-          <li>Hit Transform!</li>
-          <li>Wait just a moment for some magic</li>
-          <li>Observe the images on the right</li>
-          <li>Click on an image to observe that step at a closer view</li>
-        </ol> 
-        <button id="transform-button">Transform!</button>
+      <span class="subtitle">Shapes and Colors</span>
+      <a href="./demo.html">View Our Demo!</a>
+      <div class="flex-row">
+        <img src="https://images.immediate.co.uk/production/volatile/sites/4/2014/11/GettyImages-182457909-f1e4c7a.jpg?quality=90&resize=768,574">
+        <img src="https://user-images.githubusercontent.com/23535069/145663786-91326eba-35ce-4555-8db4-ddd6f80c15ac.png">
       </div>
-      <div class="flex-col">
-          <img id="img-init" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
-          <label>Initial</label>
-          <img id="img-edge" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
-          <label>Edges</label>
-          <img id="img-bledge" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
-          <label>Blurred Edge</label>
-          <img id="img-voro" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
-          <label>Voronoi Distribution</label>
-          <img id="img-final" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
-          <label>Final</label>
+      <div>
+        <h3>description</h3>
+        <span>Our project aims to demonstrate how computational geometry can be applied to an artistic application. We will accept images as input from users and use geometric concepts to turn them into stained glass or mosaic-esque versions.
+          The original inspiration for this project was using voronoi diagrams to create the stained glass window look, but we added Sobel edge detection and k-means clustering to improve the results as well. The edge detection helps to maintain the original edge boundaries of the image, and the k-means works to create a reduced color palette which is applied to the resulting image.
+          </span>
+          <h3>process overview</h3>
+          <ol>
+            <li>User inputs image</li>
+            <li>Run k-means clustering to recolor the image with a reduced color palette, store for later</li>
+            <li>Run Sobel edge detection</li>
+            <li>Utilize a gaussian blur and image subtraction to set up a probability distribution which lets us sample voronoi points that are near (but not on) edges</li>
+            <li>Sample some number of points and create a voronoi diagram with this point set</li>
+            <li>Color each voronoi region using the result of the k-means recoloring</li>
+            <li>Return the image to the user</li>
+          </ol>
+          <h3>presentation and demo</h3>
+          <a href="https://rit.zoom.us/rec/share/AVZNHvlk_QAaEmpf6IG_7vk_EMd8JbV0pU2ofdWisat7bNgM6QbawsfrSuWpLk4.ggrQ1_gHuxkGwhyD?startTime=1638765649000">View here</a>
+          <h3>resources</h3>
+          <ul>
+            <li>https://www.researchgate.net/publication/239398674_An_Isotropic_3x3_Image_Gradient_Operator</li>
+            <li>https://en.wikipedia.org/wiki/Fortune%27s_algorithm</li>
+            <li>https://www.semanticscholar.org/paper/Image-Stained-Glass-using-Voronoi-Diagrams-Gorbach/a10a4c44f8d3dc246e161fd4802b1162462e94e1</li>
+            <li>https://colab.research.google.com/drive/1EWcej7Hm2F_tGf7-SB2UX6uJ-5QvCEKb</li>
+          </ul>
       </div>
-    </div>
   </div>
  </body>
 </html>

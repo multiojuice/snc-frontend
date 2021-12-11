@@ -1,0 +1,48 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+ <script type="text/javascript" src="index.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+ <head>
+ </head>
+</style>
+
+ <body>
+  <div class="flex-col">
+    <div class="flex-row" style="width: 100%;margin-top: 40px;">
+      <span class="subtitle">Turn your favorite photo into "Shapes and Colors"</span>
+    </div>
+    <div class="flex-row">
+      <div class="flex-col">
+        <h3>directions</h3>
+        <ol>
+          <li>
+            Upload an image to Upload! 
+            <input type="file"id="uploader" name="avatar" accept="image/png, image/jpeg">
+          </li>
+          <li>Input number of panes: <input></li>
+          <li>Hit Transform!</li>
+          <li>Wait just a moment for some magic</li>
+          <li>Observe the images on the right</li>
+          <li>Click on an image to observe that step at a closer view</li>
+        </ol> 
+        <button id="transform-button">Transform!</button>
+      </div>
+      <div class="flex-col">
+          <img id="img-init" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
+          <label>Initial</label>
+          <img id="img-edge" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
+          <label>Edges</label>
+          <img id="img-bledge" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
+          <label>Blurred Edge</label>
+          <img id="img-voro" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
+          <label>Voronoi Distribution</label>
+          <img id="img-final" src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png">
+          <label>Final</label>
+      </div>
+    </div>
+  </div>
+ </body>
+</html>
